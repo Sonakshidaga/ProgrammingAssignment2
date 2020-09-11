@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
+## the overall fucntion calculates the inverse of a matrix 
 ## functions do
 
-## Write a short comment describing this function
+## creating two functions makeCacheMatrix and cachesolve which consits of set and get to take the values using solve function
 library(MASS)
 makeCacheMatrix <- function(x=matrix()){
   inv <- NULL
@@ -15,6 +15,8 @@ makeCacheMatrix <- function(x=matrix()){
   list (set=set, get=get, setInverse=setInverse, getInverse=getInverse)
 }
 
+# This function calculates the inverse of the "matrix" created by the first function. It will check to see if the inverse of the matrix has already been calculated.
+# If so, it will retrieve the inverse from the cache and skip the computation. Otherwise, it will calculate the inverse and produce it by itself via the setinverse function.
 cacheSolve <- function (x, ...) {
   inv <- x$getInverse()
   if(!is.null(inv)){
